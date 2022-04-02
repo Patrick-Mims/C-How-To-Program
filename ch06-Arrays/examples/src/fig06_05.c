@@ -12,6 +12,7 @@ create_histogram(int *h)
 
   for(i = 0; i < SUB_SCRIPT; i++)
   {
+    printf("%d. %d -> ", i, h[i]);
     for(j = 1; j <= h[i]; j++)
     {
       printf("%s", "*");
@@ -43,16 +44,17 @@ int
 main(void)
 {
   /* A subscripted array is an lvalue, it can be used on the left side of an assignment */
-  int list_a[SUB_SCRIPT] = { 30, 45, 72, 12, 53, 21, 37, 88, 4, 61 };
+  int list_a[SUB_SCRIPT] = { 30, 45, 72, 92, 3, 27, 13, 38, 42, 61 };
   int list_b[SUB_SCRIPT] = { 0 };
 
   printf("\nInitializing the elements of an array...\n");
 
   initialize_list(list_b);
 
-  show_list(list_b);
-
+  // Histogram of list_a[SUB_SCRIPT]
   create_histogram(list_a);
+
+  show_list(list_b);
 
   return 0;
 }
