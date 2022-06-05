@@ -3,28 +3,28 @@
 
 #include "list.h"
 
-struct node *delete_node(struct node *list, int item)
+void delete_node(struct node **list, int item)
 {
+  printf("Deleting: %d\n", item);
+
   struct node *cur, *prev;
 
-  for(cur = list, prev = NULL; cur != NULL && cur->data != item; prev = cur, cur = cur->next)
+  for(cur = *list, prev = NULL; cur != NULL && cur->data != item; prev = cur, cur = cur->next)
     ;
 
   if(cur == NULL)
   {
-    return list;
+    *list = cur;
   }
 
   if(prev == NULL)
   {
-    list = list->next;
+    *list = prev;
   } else {
     prev->next = cur->next;
   }
 
   free(cur);
-
-  return list;
 }
 
 void display(struct node **list)
