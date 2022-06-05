@@ -5,6 +5,7 @@
 
 int main(int argc, char **argv)
 {
+  int i = 0;
   struct node *head = NULL;
 
   if((head = malloc(sizeof(struct node))) == NULL)
@@ -13,12 +14,11 @@ int main(int argc, char **argv)
     exit(EXIT_FAILURE);
   }
 
-  insert_node(&head, 5);
-  insert_node(&head, 10);
-  insert_node(&head, 15);
-  insert_node(&head, 20);
-  insert_node(&head, 25);
-  insert_node(&head, 30);
+  do
+  {
+    insert_node(&head, i);
+    i = i + 5;
+  } while(i < 30);
 
   display(&head);
 
@@ -30,5 +30,3 @@ int main(int argc, char **argv)
 
   return 0;
 }
-
-/* A linked list is a linear collection of self-referential structures, called nodes */

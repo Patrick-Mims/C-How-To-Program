@@ -7,9 +7,8 @@ struct node
   struct node *next;
 };
 
-void insert_node(struct node **, int);
-void display(struct node **);
-//struct node *delete_node(struct node *, int);
 void delete_node(struct node **, int);
+void display(struct node **);
+void insert_node(struct node **, int);
 
 #endif
