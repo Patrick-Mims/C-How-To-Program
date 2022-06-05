@@ -16,21 +16,17 @@ int main(int argc, char **argv)
   insert_node(&head, 5);
   insert_node(&head, 10);
   insert_node(&head, 15);
+  insert_node(&head, 20);
+  insert_node(&head, 25);
+  insert_node(&head, 30);
 
   display(&head);
 
-  //struct node *i = delete_node(head, 10);
   delete_node(&head, 10);
-
   display(&head);
-
-  //struct node *j = delete_node(head, 5);
 
   delete_node(&head, 5);
-
   display(&head);
-
-  //printf("---->%d\n", j->data);
 
   return 0;
 }
