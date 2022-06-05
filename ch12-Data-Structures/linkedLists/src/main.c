@@ -27,6 +27,8 @@ int main(int argc, char **argv)
 
   display(&head);
 
+  printf("---->%d\n", j->data);
+
   return 0;
 }
 
